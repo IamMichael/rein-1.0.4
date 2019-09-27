@@ -1,0 +1,13 @@
+[Unit]
+Description=Rein Daemon
+After=network.service
+Wants=network.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/rein/sbin/rein -c /usr/local/rein/etc/rein.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
